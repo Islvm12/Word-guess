@@ -191,7 +191,7 @@ function handleGuess() {
     }
 
     if (rightGuess) {
-        playSound("./src/youWon.mp3")
+        playSound("./src/youWon.MP3")
         messageArea.innerHTML = `You have guessed the word right <span>${wordToGuess}</span>`;
         let allTries = document.querySelectorAll('.input-fields > div > div > input');
         allTries.forEach((ele) => ele.disabled = true)
