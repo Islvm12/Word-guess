@@ -110,7 +110,7 @@ function generateInputFields() {
     const inputs = document.querySelectorAll('input');
     inputs.forEach((input, index) => {
         input.addEventListener('input', function () {
-            playSound("/src/newClick.MP3");
+            playSound("./src/newClick.MP3");
 
             if (this.value.length === 1) {
                 let nextIndex = index + 1;
@@ -191,7 +191,7 @@ function handleGuess() {
     }
 
     if (rightGuess) {
-        playSound("/src/youWon.mp3")
+        playSound("./src/youWon.mp3")
         messageArea.innerHTML = `You have guessed the word right <span>${wordToGuess}</span>`;
         let allTries = document.querySelectorAll('.input-fields > div > div > input');
         allTries.forEach((ele) => ele.disabled = true)
@@ -204,7 +204,7 @@ function handleGuess() {
         return;
     } else {
         if (correctLetter && currentTry < numberOfTries) {
-            playSound("/src/correctSound.MP3")
+            playSound("./src/correctSound.MP3")
 
         }
 
@@ -221,7 +221,7 @@ function handleGuess() {
             document.querySelector(`#try-${currentTry}-char-1`).focus();
             gameState = "Running"
         } else {
-            playSound("/src/gameOver.mp3")
+            playSound("./src/gameOver.mp3")
             messageArea.innerHTML = `<span class="game-over">Game Over</span> The word is ${wordToGuess}`;
             guessButton.disabled = true;
             guessButton.classList.add('disabled');
@@ -273,11 +273,11 @@ function showHint() {
 
 function clickEffect(button) {
     button.addEventListener('mousedown', () => {
-        playSound('/src/buttonClickDown.MP3');
+        playSound('./src/buttonClickDown.MP3');
         button.classList.add("clicked")
     });
     button.addEventListener('mouseup', () => {
-        playSound('/src/buttonClickUp.MP3');
+        playSound('./src/buttonClickUp.MP3');
         button.classList.remove("clicked")
     });
 }
@@ -301,7 +301,7 @@ function dontPress() {
     } else {
         clearTimeout(warning);
         redButtonMsgArea.innerText = `I told not to press the button!!!`;
-        playSound("/src/countdown.MP3")
+        playSound("./src/countdown.MP3")
         let counter = 6;
         redButton.remove();
         redCounter.innerHTML = `${counter}`;
@@ -356,10 +356,10 @@ document.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
         guessButton.classList.add("clicked");
         guessButton.click();
-        playSound('/src/buttonClickDown.MP3');
+        playSound('./src/buttonClickDown.MP3');
         setTimeout(() => {
             guessButton.classList.remove("clicked");
-            playSound('/src/buttonClickUp.MP3');
+            playSound('./src/buttonClickUp.MP3');
 
         }, 150);
     }
