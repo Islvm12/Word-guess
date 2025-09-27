@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <title></title>
+    <link rel="stylesheet" href="/guess.css">
+</head>
+
+<body>
+    <h1></h1>
+    <div class="game-container">
+        <div class="game-area">
+            <div class="input-fields"></div>
+            <div class="controls">
+                <button class="check">Check The Word</button>
+                <button class="hint"></button>
+            </div>
+            <div class="message">
+            </div>
+        </div>
+        <div class="colors-indicators">
+            <h2>Colors Indicators</h2>
+            <div class="indicator">
+                <div class="color in-place"><span></span></div>
+                <div class="color-text">Letter Is Right And In Place</div>
+            </div>
+            <div class="indicator">
+                <div class="color not-in-place"><span></span></div>
+                <div class="color-text">Letter Is Right But Not In Place</div>
+            </div>
+            <div class="indicator">
+                <div class="color wrong"><span></span></div>
+                <div class="color-text">Letter Dosen't Exist In The Word</div>
+            </div>
+            <div class="dont-press">
+                <div class="red-counter"></div>
+                <button class="red-button"></button>
+                <span>If you struggle, press this button</span>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="/guess.js"></script>
+</body>
+
+</html>
